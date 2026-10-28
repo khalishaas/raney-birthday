@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for raney ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Patrick+Hand&display=swap');
+:root{--pink:#ff7eae;--light:#fff4f8;--soft:#ffd9e7;--dark:#5d3144}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;color:var(--dark)}
+body{
+  background:radial-gradient(circle at 10% 15%,#ffd9e7 0 2px,transparent 3px),
+  radial-gradient(circle at 85% 20%,#ffc5dc 0 2px,transparent 3px),
+  linear-gradient(135deg,#fff7fa,#ffe8f1);background-size:70px 70px,90px 90px,100% 100%;overflow-x:hidden
+}
+button{
+  font:inherit;cursor:pointer
+}
+  .screen{
+  display:none;min-height:100vh;
+  padding:28px 18px;
+  align-items:center;
+  justify-content:center
+}.screen.active{display:flex}
+.window{
+  width:min(900px,100%);
+  background:rgba(255,250,253,.94);
+  border:2px solid #f4a6c3;
+  border-radius:22px;box-shadow:0 18px 50px rgba(157,73,107,.16);
+  overflow:hidden
+}
+.bar{
+  height:44px;
+  background:#ffd6e5;
+  border-bottom:2px solid #f4a6c3;
+  display:flex;
+  align-items:center;
+  padding:0 15px;gap:7px
+}
+.dot{
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid #df8daa
+}
+.content{
+  padding:48px 34px
+}
+.center{
+  text-align:center
+}
+.script{
+  font-family:"Patrick Hand",cursive
+}
+h1,h2{
+  margin:0 0 14px
+}
+h1{
+  font-size:clamp(42px,8vw,82px);
+  line-height:.95;color:#ed5f96
+}
+h2{
+  font-size:clamp(28px,5vw,48px);
+  color:#ed5f96
+}
+p{line-height:1.7}
+.btn{
+  border:2px solid #ec6b9d;
+  background:#ff83ae;
+  color:white;
+  border-radius:999px;
+  padding:13px 24px;
+  font-weight:700;
+  box-shadow:0 5px 0 #d95788;
+  transition:.15s
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 7px 0 #d95788
+}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #d95788}
+.mini{font-size:13px;opacity:.7}
+.bunny{font-size:58px;margin-bottom:15px}
+.sticker{
+  display:inline-block;
+  background:#fff;
+  border:1px solid #f0aac5;
+  padding:9px 14px;
+  transform:rotate(-3deg);
+  box-shadow:3px 4px 0 #f6c4d7;
+  margin:7px;
+  font-family:"Patrick Hand",cursive;
+  font-size:20px
+}
+.progress{
+  height:24px;
+  border:2px solid #ee7ca7;
+  border-radius:999px;
+  padding:3px;
+  margin:25px auto;
+  max-width:520px;
+  background:#fff}
+.progress span{
+  display:block;
+  width:0;
+  height:100%;
+  border-radius:999px;
+  background:#ff8bb4;
+  transition:width 1.8s
+}
+.checks{
+  text-align:left;
+  max-width:430px;
+  margin:25px auto;
+  line-height:2.2
+}
+.report{
+  display:grid;
+  grid-template-columns:160px 1fr;gap:25px;
+  align-items:center
+}
+.avatar{
+  width:160px;
+  height:190px;
+  border:2px dashed #ef91b2;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:#fff1f6;
+  padding:15px;
+  font-family:"Patrick Hand";
+  font-size:20px;
+  overflow:hidden
+}
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+.stats{display:grid;gap:10px}
+.stat{background:#fff;border:1px solid #f4bdd0;border-radius:13px;padding:12px 15px}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:25px 0}.tcard{background:#fff;border:1px solid #f0b2ca;border-radius:14px;padding:14px;text-align:center}.photo{aspect-ratio:4/5;width:100%;border-radius:10px;border:2px dashed #e89ab8;display:flex;align-items:center;justify-content:center;background:#fff4f8;font-family:"Patrick Hand";font-size:17px;color:#a65a78;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.tcard b{display:block;margin-top:9px}
+.choices{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}.choice{padding:20px 10px;background:#fff;border:2px solid #f1a1bd;border-radius:18px;color:var(--dark);font-weight:700}.choice:hover{background:#fff0f6;transform:translateY(-3px)}
+.reveal{display:none;margin-top:20px;padding:22px;border-radius:18px;background:#fff0f6;border:1px solid #f1a1bd}.reveal.show{display:block}
+.letter{background:#fffdfd;border:1px solid #efb1c9;padding:35px;border-radius:8px;text-align:left;line-height:1.9;box-shadow:8px 8px 0 #ffd4e3;white-space:pre-line}.big-heart{font-size:72px;animation:pulse 1.4s infinite}@keyframes pulse{50%{transform:scale(1.1)}}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:99}.confetti i{position:absolute;width:9px;height:15px;background:#ff75a7;top:-20px;animation:fall 3s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+.music{position:fixed;right:15px;bottom:15px;z-index:20;background:#fff;border:2px solid #ef8db0;border-radius:999px;padding:10px 15px;color:#9a496b;font-weight:700;box-shadow:0 5px 15px #d98ba733}
+@media(max-width:650px){.content{padding:35px 20px}.report{grid-template-columns:1fr}.avatar{margin:auto}.timeline{grid-template-columns:repeat(2,1fr)}.choices{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<button class="music" onclick="openMusic()">♫ play our song</button><div id="confetti" class="confetti"></div>
+
+<section class="screen active" id="s1"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="content center">
+<div class="bunny">helluuw ney</div><div class="sticker" id="opening"></div><h1>happy birthday,<br><span id="name1"></span> ♡</h1><p>someone very special is turning <b id="age1"></b> today.</p><button class="btn" onclick="next(2)">click to enter ♡</button>
+</div></div></section>
+
+<section class="screen" id="s2"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="content center">
+<div class="sticker">IMPORTANT ANNOUNCEMENT</div><h2><span id="name2"></span>'s <span id="age2"></span>th birthday loading...</h2><p>preparing the next chapter ♡</p><div class="progress"><span id="bar"></span></div><div class="checks">☑ childhood memories<br>☑ growing up together<br>☑ becoming more amazing<br>☑ being loved very, very much</div><button class="btn" onclick="next(3)">continue →</button>
+</div></div></section>
+
+<section class="screen" id="s3"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="content">
+<div class="center"><div class="sticker">birthday report ♡</div><h2><span id="name3"></span>, age <span id="age3"></span></h2></div><div class="report"><div class="avatar" id="potrait">put favorite photo here ♡</div><div class="stats"><div class="stat"><b>name:</b> <span id="name4"></span></div><div class="stat"><b>level:</b> <span id="age4"></span> unlocked </div><div class="stat"><b>known since:</b> kindergarten!!!</div><div class="stat"><b>current status:</b> growing beautifully</div><div class="stat"><b>rarity:</b> one of one</div><div class="stat"><b>most important fact:</b> very loved</div></div></div><div class="center" style="margin-top:28px"><button class="btn" onclick="next(4)">next ♡</button></div>
+</div></div></section>
+
+<section class="screen" id="s4"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="content">
+<div class="center"><div class="sticker">from TK to now</div><h2>look how far you've come ♡</h2><p>we really grew up together ney...</p></div>
+<div class="timeline" id="timeline"></div><div class="center"><button class="btn" onclick="next(5)">keep going →</button></div>
+</div></div></section>
+
+<section class="screen" id="s5"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="content center">
+<div class="sticker">very important question</div><h2>which <span id="name5"></span> do i love the most?</h2><div class="choices"><button class="choice" onclick="reveal()">maybe<br>little <span class="name"></span></button><button class="choice" onclick="reveal()">um<br>teenage <span class="name"></span></button><button class="choice" onclick="reveal()">probably<br><span class="name"></span> now</button><button class="choice" onclick="reveal()">maybe<br>future <span class="name"></span></button></div><div id="reveal" class="reveal"><b>wrong answer!!!</b><br><br>it's all of them.<br>i love you in every version of you. ♡</div><button class="btn" onclick="next(6)" style="margin-top:22px">next ♡</button>
+</div></div></section>
+
+<section class="screen" id="s6"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="content">
+<div class="center"><div class="sticker">a little reminder</div><h2>things i hope you never forget</h2></div><div class="letter">♡ you are allowed to grow at your own pace.<br>♡ you don't have to have everything figured out at 20.<br>♡ you have made it through every version of yourself so far.<br>♡ you are more loved than you probably realize.<br>♡ and i will always be proud of you — not only for what you achieve, but simply for who you are.</div><div class="center" style="margin-top:30px"><button class="btn" onclick="next(7)">one last thing...</button></div>
+</div></div></section>
+
+<section class="screen" id="s7"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="content">
+<div class="center"><div class="sticker">from me to you ♡</div><h2>dibaca baik baik please</h2></div><div class="letter" id="letter"></div><div class="center" style="margin-top:35px"><button class="btn" onclick="next(8)">finish ♡</button></div>
+</div></div></section>
+
+<section class="screen" id="s8"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="content center">
+<div class="big-heart">♡</div><h1>happy <span id="age8"></span>th,<br><span id="name8"></span>!</h1><p class="script" style="font-size:28px">in this lifetime,<br>and in every version of you,<br>you'll always have me.</p><div class="sticker">forever & always</div><br><br><button class="btn" onclick="celebrate()">♡ click for confetti ♡</button><p class="mini" style="margin-top:25px">made with so much love.</p>
+</div></div></section>
+
+<script src="raney.js"></script>
+<script>
+const b=birthday;
+document.title=`for ${b.name} ♡`;
+document.querySelectorAll("#name1,#name2,#name3,#name4,#name5,#name8").forEach(e=>e.textContent=b.name);
+document.querySelectorAll("#age1,#age2,#age3,#age4,#age8").forEach(e=>e.textContent=b.age);
+document.getElementById("opening").textContent=b.openingLine;
+document.getElementById("letter").textContent=b.letter;
+document.querySelectorAll(".name").forEach(e=>e.textContent=b.name);
+
+const labels={smp:"SMP",sma:"SMA",now:"NOW"};
+document.getElementById("timeline").innerHTML=Object.entries(b.photos).map(([key,path])=>`
+<div class="tcard"><div class="photo"><img src="${path}" alt="${labels[key]} photo" onerror="this.style.display='none';this.parentElement.innerHTML='${labels[key]} photo'"></div><b>${labels[key]}</b><span class="mini">${key==="tk"?"little "+b.name:key==="now"?b.age+" & beautiful":"growing up"}</span></div>`).join("");
+
+const first = b.potrait;
+
+if(first){
+  document.getElementById("potrait").innerHTML =
+    `<img src="${first}" alt="favorite photo"
+    onerror="this.parentElement.innerHTML='put favorite photo here ♡'">`;
+}
+function next(n){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));document.getElementById("s"+n).classList.add("active");window.scrollTo(0,0);if(n===2)setTimeout(()=>document.getElementById("bar").style.width="100%",100)}
+function reveal(){document.getElementById("reveal").classList.add("show")}
+function celebrate(){const c=document.getElementById("confetti");c.innerHTML="";for(let i=0;i<90;i++){const x=document.createElement("i");x.style.left=Math.random()*100+"%";x.style.animationDelay=Math.random()*1.3+"s";x.style.transform="rotate("+Math.random()*360+"deg)";c.appendChild(x)}setTimeout(()=>c.innerHTML="",4500)}
+function openMusic(){if(b.songLink)window.open(b.songLink,"_blank");}
+</script>
+</body>
+</html>
